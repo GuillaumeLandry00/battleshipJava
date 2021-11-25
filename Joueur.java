@@ -39,6 +39,15 @@ public class Joueur extends Participant{
 		
 		return nom;
 	}
-	
-	
+
+	/**
+	 * Accesseur du nom.
+	 *
+	 * @return
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
 }

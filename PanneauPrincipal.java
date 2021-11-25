@@ -10,23 +10,33 @@ import java.awt.*;
 
 public class PanneauPrincipal extends JPanel {
 
-     public JPanel panHaut;
-     public JPanel panBas;
-     public Joueur joueur;
-     public Ordi ordi;
+    public JPanel panPrincipal;
+    public Joueur joueur;
+    public Ordi ordi;
+    public PanneauHaut panHaut = new PanneauHaut(joueur, ordi);
+    public PanneauBas panBas = new PanneauBas();
+
+
 
     /**
      * Constructeur de base de la classe PanneauPrincipal
-     * @param joueur, instance de la classe joueur
-     * @param ordi, instance de la classe ordi
-     * @param panHaut, le panneau du haut permet de gérer l'affichage
-     * @param panBas, contient les boutons
      */
-     public PanneauPrincipal(Joueur joueur, Ordi ordi , JPanel panHaut, JPanel panBas){
-         this.joueur = joueur;
-         this.ordi = ordi;
-         this.panBas = panBas;
-         this.panHaut = panHaut;
+     public PanneauPrincipal(){
+         initComponent();
+     }
+
+    /**
+     * Cette méthode permet d'ajouter les components de base au panneau principal
+     */
+    public void initComponent(){
+        panPrincipal = new JPanel(new GridLayout(2,1));
+
+        //Permets d'ajouter le pannel primaire celui qui affiche
+        setLayout(new GridLayout(1,2));
+        add(panHaut.grilleGauche);
+        add(panHaut.grilleDroite);
+
+      //  panPrincipal.add(panBas);
      }
 
 
